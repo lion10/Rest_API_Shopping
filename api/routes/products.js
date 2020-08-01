@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const Product = require("../models/products");
+const Product = require("../models/product");
 
 // Handling incoming endPoints requests
 router.get("/", (req, res, next) => {
@@ -45,9 +45,9 @@ router.post("/", (req, res, next) => {
       res.status(201).json({
         message: "Created porduct successfully",
         createdProduct: {
+          _id: result._id,
           name: result.name,
           price: result.price,
-          _id: result._id,
           request: {
             type: "POST",
             url: "http://localhost:3000/products/" + result._id,
