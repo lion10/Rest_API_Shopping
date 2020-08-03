@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 });
 
 app.use(morgan("dev")); // dev|tiny|combined format output ---> logger midlle ware
+app.use(express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
