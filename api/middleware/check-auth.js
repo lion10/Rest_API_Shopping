@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 
+// check if the user has authorize to make a request or not
 module.exports = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1]; // I start from index 1 becuse I will send (Bearer) with the request in header
